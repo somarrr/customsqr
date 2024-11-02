@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>رمز QR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h4>رمز QR للوصول إلى النموذج</h4>
+        <img src="{{ url_for('get_qr', unique_id=request.view_args['unique_id']) }}" alt="QR Code">
+    </div>
+</body>
+</html>

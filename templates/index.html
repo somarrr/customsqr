@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>الهيئة العامة للکمرك</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Account-setting-or-edit-profile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="row gutters">
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="account-settings">
+                        <div class="user-profile">
+                            <img src="{{ url_for('static', filename='10.png') }}" alt="شعار الهيئة">
+                            <h5>جمهوریە العراق</h5>
+                            <h5>وزارة المالية</h5>
+                            <h6>الهيئة العامة للکمرك</h6>
+                            <h6>التصريحة الکمركية</h6>
+                        </div>
+                        <div class="about">
+                            <p>هذه النسخة الالكترونية للتصريحة الکمركية الصادرة من کمارك اقلیم کوردستان - العراق</p>
+                            <h6 class="mb-2 text-primary">رقم التصريحة: {{ data['رقم التصريحة'] }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="row gutters">
+                        <h6 class="mb-2 text-primary">بيانات التصريحة</h6>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>دائرة الاصدار</label>
+                                <label class="form-control">{{ data['دائرة الاصدار'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>تاریخ/وقت التنظيم</label>
+                                <label class="form-control">{{ data['تاریخ/وقت التنظيم'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>رقم السيارة/الرحلة</label>
+                                <label class="form-control">{{ data['رقم السيارة/الرحلة'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>اسم السائق</label>
+                                <label class="form-control">{{ data['اسم السائق'] }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutters">
+                        <h6 class="mt-3 mb-2 text-primary">بيانات المستورد</h6>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>اسم التاجر/الجهة المستوردة</label>
+                                <label class="form-control">{{ data['اسم التاجر/الجهة المستوردة'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>اسم الوكيل الاخراجي</label>
+                                <label class="form-control">{{ data['اسم الوكيل الاخراجي'] }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutters">
+                        <h6 class="mt-3 mb-2 text-primary">بيانات اخرى</h6>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>رقم منافيست النقل البري</label>
+                                <label class="form-control">{{ data['رقم منافيست النقل البري'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>رقم استمارة الجباية</label>
+                                <label class="form-control">{{ data['رقم استمارة الجباية'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>مكان التسليم/التفريغ</label>
+                                <label class="form-control">{{ data['مكان التسليم/التفريغ'] }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row gutters">
+                        <h6 class="mt-3 mb-2 text-primary">الأقيام والرسومات</h6>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>مجموع الرسم الکمركي</label>
+                                <label class="form-control">{{ data['مجموع الرسم الکمركي'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>مجموع الضريبة</label>
+                                <label class="form-control">{{ data['مجموع الضريبة'] }}</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label>قيمة البضاعة</label>
+                                <label class="form-control">{{ data['قيمة البضاعة'] }}</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- إضافة الجدول -->
+                    <div class="row gutters">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th scope="col">رمز HS</th>
+                              <th scope="col">نوع البضاعة</th>
+                              <th scope="col">الكمية</th>
+                              <th scope="col">التعبئة</th>
+                              <th scope="col">م. الكمية</th>
+                              <th scope="col">الوحدة</th>
+                              <th scope="col">الرسم</th>
+                              <th scope="col">الضريبة</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for item in data['table_data'] %}
+                            <tr>
+                              <td>{{ item['رمز HS'] }}</td>
+                              <td>{{ item['نوع البضاعة'] }}</td>
+                              <td>{{ item['الكمية'] }}</td>
+                              <td>{{ item['التعبئة'] }}</td>
+                              <td>{{ item['م. الكمية'] }}</td>
+                              <td>{{ item['الوحدة'] }}</td>
+                              <td>{{ item['الرسم'] }}</td>
+                              <td>{{ item['الضريبة'] }}</td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+</body>
+</html>

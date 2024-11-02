@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>عرض النموذج المحفوظ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">النموذج المحفوظ</h2>
+        
+        <!-- عرض المحتوى المحفوظ -->
+        <div class="content">
+            {{ content | safe }}
+        </div>
+
+        <!-- رابط إلى صفحة الباركود -->
+        <div class="mt-2">
+            <a href="{{ qr_url }}" class="btn btn-secondary" target="_blank">عرض رمز QR</a>
+        </div>
+    </div>
+</body>
+</html>
